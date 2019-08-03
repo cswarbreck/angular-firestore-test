@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ItemsService } from '../../services/items.service';
+import { Item } from '../../models/item';
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
+    this.itemsService.getItems().subscribe(items => {
+      console.log(items);
+    });
   }
 
 }
