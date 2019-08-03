@@ -1,1 +1,11 @@
-<p>cars works!</p>
+<div *ngIf="items?.length > 0;else noItems" class="container">
+  <ul *ngFor="let item of items" class="collection">
+    <li class="collection-item">{{item.image}}</li>
+    <li class="collection-item">{{item.manufacturer}}</li>
+    <li class="collection-item">{{item.model}}</li>
+  </ul>
+</div>
+<ng-template #noItems>
+  <hr>
+  <h5>There are no items to list</h5>
+</ng-template>
