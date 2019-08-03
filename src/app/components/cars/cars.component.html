@@ -1,6 +1,6 @@
 <div *ngIf="items?.length > 0;else noItems" class="container">
   <ul *ngFor="let item of items" class="collection">
-    <li class="collection-item">{{item.image}}</li>
+    <li class="collection-item"><img src={{item.image}} alt=""></li>
     <li class="collection-item">{{item.manufacturer}}</li>
     <li class="collection-item">{{item.model}}</li>
   </ul>
