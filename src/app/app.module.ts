@@ -16,7 +16,7 @@ import { ItemsService } from './services/items.service';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-firestore-test'),
+    AngularFireModule.initializeApp(environment.firebase, 'cars-tech-test'),
     AngularFirestoreModule
   ],
   providers: [ItemsService],
