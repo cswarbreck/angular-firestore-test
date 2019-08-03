@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Item } from '../models/item';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ItemsService {
@@ -9,7 +10,14 @@ export class ItemsService {
   items: Observable<Item[]>;
 
   constructor(public afs: AngularFirestore) {
-    this.items = this.afs.collection('cars').valueChanges();
+    // this.items = this.afs.collection('cars').valueChanges();
+    this.items = this.afs.collection('cars').snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Item;
+        data.id = a.payload.doc.id;
+        return data;
+      });
+    }));
   }
 
   getItems() {
