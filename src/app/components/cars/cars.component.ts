@@ -7,12 +7,14 @@ import { Item } from '../../models/item';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
+  items: Item[];
 
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
     this.itemsService.getItems().subscribe(items => {
       console.log(items);
+      this.items = items;
     });
   }
 
