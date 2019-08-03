@@ -8,11 +8,13 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { CarsComponent } from './components/cars/cars.component';
 import { ItemsService } from './services/items.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsComponent
+    CarsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
