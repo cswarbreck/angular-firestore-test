@@ -1,0 +1,23 @@
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  .card {
+    width: calc(100% - 16px);
+    margin: 8px;
+    text-align: left !important;
+    @media(min-width: (650px)){
+      height: 394px;
+      width: 290px;
+    }
+    .card-content {
+      position: absolute;
+      bottom: 68px;
+    }
+    .card-action{
+      position: absolute;
+      bottom: 10px;
+    }
+  }
+}
