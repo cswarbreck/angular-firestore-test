@@ -1,17 +1,22 @@
-<div *ngIf="items?.length > 0;else noItems" class="container">
-  <ul *ngFor="let item of items" class="collection">
-    <li class="collection-item"><img src="{{item.image}}" alt="">
-      <br>
-      <strong>{{item.manufacturer}}</strong>
-      <br>
-      <strong>{{item.model}}</strong>
-      <br>
-      <button (click)="deleteItem($event, item)" class="btn">Delete Car</button>
-    </li>
+<div *ngIf="items?.length > 0;else noItems">
+  <div class="col s12 cards-container">
+      <div *ngFor="let item of items" class="card">
+        <div class="card-image">
+          <img src="{{item.image}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title">{{item.manufacturer}}</span>
+          <p>{{item.model}}</p>
+        </div>
+        <div class="card-action">
+          <button (click)="deleteItem($event, item)" class="btn waves-effect red lighten-2">Delete This Car</button>
+        </div>
+      </div>
+    </div>
     <br>
-  </ul>
 </div>
+
 <ng-template #noItems>
   <hr>
-  <h5>There are no items to list</h5>
+  <h5>These are not the items you are looking for.</h5>
 </ng-template>
