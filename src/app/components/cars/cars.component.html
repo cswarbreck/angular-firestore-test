@@ -1,8 +1,14 @@
 <div *ngIf="items?.length > 0;else noItems" class="container">
   <ul *ngFor="let item of items" class="collection">
-    <li class="collection-item">{{item.image}}</li>
-    <li class="collection-item">{{item.manufacturer}}</li>
-    <li class="collection-item">{{item.model}}</li>
+    <li class="collection-item"><img src="{{item.image}}" alt="">
+      <br>
+      <strong>{{item.manufacturer}}</strong>
+      <br>
+      <strong>{{item.model}}</strong>
+      <br>
+      <button (click)="deleteItem($event, item)" class="btn">Delete Car</button>
+    </li>
+    <br>
   </ul>
 </div>
 <ng-template #noItems>
