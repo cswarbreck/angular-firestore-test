@@ -1,22 +1,22 @@
-<div *ngIf="items?.length > 0;else noItems">
+<div *ngIf="cars?.length > 0;else noCars">
   <div class="col s12 cards-container">
-      <div *ngFor="let item of items" class="card">
+      <div *ngFor="let car of cars" class="card">
         <div class="card-image">
-          <img src="{{item.image}}">
+          <img src="{{car.image}}">
         </div>
         <div class="card-content">
-          <span class="card-title">{{item.manufacturer}}</span>
-          <p>{{item.model}}</p>
+          <span class="card-title">{{car.manufacturer}}</span>
+          <p>{{car.model}}</p>
         </div>
         <div class="card-action">
-          <button (click)="deleteItem($event, item)" class="btn waves-effect red lighten-2">Delete This Car</button>
+          <button (click)="deleteCar($event, car)" class="btn waves-effect red lighten-2">Delete This Car</button>
         </div>
       </div>
     </div>
     <br>
 </div>
 
-<ng-template #noItems>
+<ng-template #noCars>
   <hr>
-  <h5>These are not the items you are looking for.</h5>
+  <h5>These are not the cars you are looking for.</h5>
 </ng-template>
