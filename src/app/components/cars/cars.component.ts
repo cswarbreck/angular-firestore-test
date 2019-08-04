@@ -19,4 +19,8 @@ export class CarsComponent implements OnInit {
     });
   }
 
+  deleteItem(event, item) {
+    this.itemsService.deleteItem(item);
+  }
+
 }
