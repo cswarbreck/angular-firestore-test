@@ -5,16 +5,16 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyCj1xHHtv83jCHsYsIGxniFh6zJy3VNXQw',
-    authDomain: 'cars-tech-test-9ca15.firebaseapp.com',
-    databaseURL: 'https://cars-tech-test-9ca15.firebaseio.com',
-    projectId: 'cars-tech-test-9ca15',
-    storageBucket: 'cars-tech-test-9ca15.appspot.com',
-    messagingSenderId: '169669831514',
-    appId: '1:169669831514:web:742176b24ad9b218'
-    // apiKey: "AIzaSyBZYQVcgU5_T-mJIruF4B_xH0N-Z22fYm4",
-    // authDomain: "cs-tech-tests.firebaseapp.com",
-    // projectId: "cs-tech-tests",
+    // apiKey: 'AIzaSyCj1xHHtv83jCHsYsIGxniFh6zJy3VNXQw',
+    // authDomain: 'cars-tech-test-9ca15.firebaseapp.com',
+    // databaseURL: 'https://cars-tech-test-9ca15.firebaseio.com',
+    // projectId: 'cars-tech-test-9ca15',
+    // storageBucket: 'cars-tech-test-9ca15.appspot.com',
+    // messagingSenderId: '169669831514',
+    // appId: '1:169669831514:web:742176b24ad9b218'
+    apiKey: "AIzaSyBZYQVcgU5_T-mJIruF4B_xH0N-Z22fYm4",
+    authDomain: "cs-tech-tests.firebaseapp.com",
+    projectId: "cs-tech-tests",
   }
 };
 
