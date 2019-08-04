@@ -19,4 +19,13 @@ export class AddCarComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    if (this.item.image !== '' && this.item.manufacturer !== '' && this.item.model !== '') {
+      this.itemsService.addItem(this.item);
+      this.item.image = '';
+      this.item.manufacturer = '';
+      this.item.model = '';
+    }
+  }
+
 }
