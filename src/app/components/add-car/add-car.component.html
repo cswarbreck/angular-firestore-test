@@ -4,15 +4,15 @@
     <form (ngSubmit)="onSubmit()" class="col s6">
       <div class="row">
         <div class="input-field col s6">
-          <input type="text" placeholder="Add Image" [(ngModel)]="item.image" name="image">
+          <input type="text" [(ngModel)]="item.image" name="image">
           <label>Image</label>
         </div>
         <div class="input-field col s6">
-          <input type="text" placeholder="Add Manufactuerer" [(ngModel)]="item.manufacturer" name="manufacturer">
+          <input type="text" [(ngModel)]="item.manufacturer" name="manufacturer">
           <label>Manufacturer</label>
         </div>
         <div class="input-field col s6">
-          <input type="text" placeholder="Add Model" [(ngModel)]="item.model" name="model">
+          <input type="text" [(ngModel)]="item.model" name="model">
           <label>Model</label>
         </div>
         <input type="submit" value="Submit" class="btn">
