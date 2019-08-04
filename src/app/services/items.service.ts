@@ -8,11 +8,12 @@ import { map } from 'rxjs/operators';
 export class ItemsService {
   itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
+  itemDoc: AngularFirestoreDocument<Item>;
 
   constructor(public afs: AngularFirestore) {
     // this.items = this.afs.collection('cars').valueChanges();
 
-    this.itemsCollection = this.afs.collection('cars', ref => ref.orderBy('manufacturer', 'asc'));
+    this.itemsCollection = this.afs.collection('cosmo-cars', ref => ref.orderBy('manufacturer', 'asc'));
 
     this.items = this.itemsCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
@@ -31,5 +32,9 @@ export class ItemsService {
     this.itemsCollection.add(item);
   }
 
+  deleteItem(item: Item) {
+    this.itemDoc = this.afs.doc('cosmo-cars/' + item.id);
+    this.itemDoc.delete();
+  }
 }
 
