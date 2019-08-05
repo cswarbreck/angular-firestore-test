@@ -36,4 +36,9 @@ export class CarsService {
     this.carDoc = this.afs.doc('cosmo-cars/' + car.id);
     this.carDoc.delete();
    }
+
+   updateCar(car: CarModel) {
+     this.carDoc = this.afs.doc('cosmo-cars/' + car.id);
+     this.carDoc.update(car);
+   }
 }
