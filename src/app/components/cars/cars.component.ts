@@ -10,6 +10,8 @@ import { CarModel } from '../../models/car-model';
 })
 export class CarsComponent implements OnInit {
   cars: CarModel[];
+  editState: boolean = false;
+  carToEdit: CarModel;
 
   constructor(private carsService: CarsService) { }
 
@@ -20,8 +22,24 @@ export class CarsComponent implements OnInit {
     });
   }
 
-  deleteCar(event, car) {
+  deleteCar(event, car: CarModel) {
+    this.clearState();
     this.carsService.deleteCar(car);
+  }
+
+  editCar(event, car: CarModel) {
+    this.editState = true;
+    this.carToEdit = car;
+  }
+
+  updateCar(car: CarModel) {
+    this.carsService.updateCar(car);
+    this.clearState();
+  }
+
+  clearState() {
+    this.editState = false;
+    this.carToEdit = null;
   }
 
 }
