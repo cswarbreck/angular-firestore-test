@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService } from '../../services/items.service';
-import { Item } from '../../models/item';
 
 import { CarsService } from '../../services/cars.service';
 import { CarModel } from '../../models/car-model';

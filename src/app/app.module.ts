@@ -8,7 +8,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { CarsComponent } from './components/cars/cars.component';
-import { ItemsService } from './services/items.service';
 import { CarsService } from './services/cars.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddCarComponent } from './components/add-car/add-car.component';
@@ -26,7 +25,7 @@ import { AddCarComponent } from './components/add-car/add-car.component';
     AngularFirestoreModule,
     FormsModule,
   ],
-  providers: [ItemsService, CarsService],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
