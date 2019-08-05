@@ -8,16 +8,30 @@
     margin: 8px;
     text-align: left !important;
     @media(min-width: (650px)){
-      height: 394px;
+      height: 446px;
       width: 290px;
     }
     .card-content {
       position: absolute;
-      bottom: 68px;
+      bottom: 0;
     }
     .card-action{
-      position: absolute;
-      bottom: 10px;
+      padding: 0;
+      padding-left: 16px;
+      #close-button{
+        padding-top: 14px;
+      }
+      form{
+        #form-container{
+          margin-right: 12px;
+          .form-buttons{
+            display: inline-block;
+            button{
+              margin-right: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }
