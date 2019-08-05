@@ -9,7 +9,26 @@
           <p>{{car.model}}</p>
         </div>
         <div class="card-action">
-          <button (click)="deleteCar($event, car)" class="btn waves-effect red lighten-2">Delete This Car</button>
+          <a href="#">
+            <i [ngStyle]="{'display':editState && carToEdit.id == car.id ? 'none' : 'block' }" (click)="editCar($event, car)" class="fa fa-pencil"></i>
+            <i *ngIf="editState && carToEdit.id == car.id" (click)="clearState()" class="fa fa-window-close" id="close-button"></i>
+          </a>
+          <div *ngIf="editState && carToEdit.id == car.id">
+            <form (ngSubmit)="updateCar(car)">
+              <div id="form-container">
+                  <input type="text" [(ngModel)]="car.image" name="image">
+                <br>
+                  <input type="text" [(ngModel)]="car.manufacturer" name="manufacturer">
+                <br>
+                  <input type="text" [(ngModel)]="car.model" name="model">
+                <br>
+                <div class="form-buttons">
+                  <button type="submit" class="btn orange waves-effect" >Update</button>
+                  <button (click)="deleteCar($event, car)" class="btn waves-effect red lighten-2">Delete</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
