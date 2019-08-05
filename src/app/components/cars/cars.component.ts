@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService } from '../../services/items.service';
-import { Item } from '../../models/item';
+
+import { CarsService } from '../../services/cars.service';
+import { CarModel } from '../../models/car-model';
 
 @Component({
   selector: 'app-cars',
@@ -8,19 +9,19 @@ import { Item } from '../../models/item';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
-  items: Item[];
+  cars: CarModel[];
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private carsService: CarsService) { }
 
   ngOnInit() {
-    this.itemsService.getItems().subscribe(items => {
-      console.log(items);
-      this.items = items;
+    this.carsService.getCars().subscribe(cars => {
+      console.log(cars);
+      this.cars = cars;
     });
   }
 
-  deleteItem(event, item) {
-    this.itemsService.deleteItem(item);
+  deleteCar(event, car) {
+    this.carsService.deleteCar(car);
   }
 
 }
